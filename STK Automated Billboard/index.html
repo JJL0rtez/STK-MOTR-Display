@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Congratulations Popup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Rings Heading -->
+<div class="title-bar">
+  <!-- Center Group: Logos + Title -->
+  		<table  class="invisible-table">
+			<tr>
+				<td>  
+					<div class="centered-logos-and-title">
+						<img src="./img/WKC-logo.png" alt="wkc-logo" class="title-logo" />
+						<img src="./img/KarateOntario-logo.png" alt="karateOntario-logo" class="title-logo" />
+						<img src="./img/NMAC-logo.png" alt="NMAC-logo" class="title-logo" />
+					</div>
+				</td>
+				<td class="fit-column">
+				<img src="./img/STK.png" alt="STK logo" class="title-logo" />
+				</td>
+				<td>
+				<h2 class="h2-title">STK Master of the Ring</h2>
+				<h1 class="h1-title">Ring Assignments</h1>
+				</td>				
+				<td class="fit-column">
+				<img src="./img/STK_MOTR.png" alt="STK Master of the Ring logo" class="title-logo" />
+				</td>
+				<td><div id="time-display" class="time-right"></td>
+
+    </tr>
+  </table>
+
+  <!-- Time on the Right -->
+  </div>
+</div>
+	
+<table id="editableTable" class="division-table">
+  <tbody>
+	  <td  class="invisible-td">
+        <table class="sub-table-borderless">
+          <tbody >
+            <tr>
+              <td colspan="2" class="ring">Stage</td>  <!-- Spans across both columns -->
+            </tr>
+            <tr>
+              <td class="event" >Adult Traditional Forms Challenge</td>
+              <td class="time">9:00am</td>
+            </tr>
+			<tr>
+              <td class="event">-17 Traditional Forms Challenge</td>
+              <td class="time">9:00am</td>
+            </tr>
+			  <tr>
+              <td class="event">Adult BB Form/Weapon Grands</td>
+              <td class="time">11:00am</td>
+            </tr>
+			<tr>
+              <td class="event">16-17 Girls Blackbelt</td>
+              <td class="time">12:00pm</td>
+            </tr>
+						<tr>
+              <td class="event">16-17 Boys Blackbelt</td>
+              <td class="time">1:30pm</td>
+            </tr>
+			<tr>
+              <td class="event">-17 Blackbelt Forms/Weapons Grands</td>
+              <td class="time"></td>
+            </tr>
+			<tr>
+              <td class="event">-17 Blackbelt Sparring Grands</td>
+              <td class="time"></td>
+            </tr>
+						<tr>
+              <td class="event">Adult Blackbelt Sparring Grands</td>
+              <td class="time"></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+	  <td>
+        <table class="sub-table">
+          <tbody>
+            <tr>
+              <td colspan="2" class="ring">Tatami  3</td>  <!-- Spans across both columns -->
+            </tr>
+            <tr>
+              <td class="event" >Women's 18+ Black Belt - Forms</td>
+              <td class="time">9:00am</td>
+            </tr>
+			<tr>
+              <td class="event">Sparring</td>
+              <td class="time">2:00pm</td>
+            </tr>
+			  <tr>
+              <td class="event">7-8 Novice</td>
+              <td class="time">10:00am</td>
+            </tr>
+						  <tr>
+              <td class="event">11-12 Novice</td>
+              <td class="time">11:00am</td>
+            </tr>
+			<tr>
+              <td class="event">15-17 Intermediate</td>
+              <td class="time">1:00pm</td>
+            </tr>
+			<tr>
+              <td class="event">Womens 18+ Advance</td>
+              <td class="time">1:30pm</td>
+            </tr>
+			
+			<tr>
+              <td colspan="2" class="ring">Tatami  2</td>  <!-- Spans across both columns -->
+            </tr>
+            <tr>
+              <td class="event" >Veteran Women 35+ Blackbelt - Forms</td>
+              <td class="time">9:00am</td>
+            </tr>
+			  <tr>
+              <td class="event">Veteran Women 42+ Blackbelt - Forms</td>
+              <td class="time">9:00am</td>
+            </tr>
+
+			<tr>
+              <td class="event">7-8 Intermediate</td>
+              <td class="time">10:00am</td>
+            </tr>
+			<tr>
+              <td class="event">13-14 Advanced</td>
+              <td class="time">12:00pm</td>
+            </tr>
+			<tr>
+              <td class="event">15-17 Novice</td>
+              <td class="time">1:30pm</td>
+            </tr>
+					<tr>
+              <td class="event">Veteran Women 42+ Blackbelt - Sparring</td>
+              <td class="time">2:00pm</td>
+            </tr>
+						<tr>
+              <td class="event">Veteran Women 35+ Blackbelt - Sparring</td>
+              <td class="time">2:00pm</td>
+            </tr>
+									<tr>
+              <td class="event"> </td>
+              <td class="time"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+	  	  <td>
+        <table class="sub-table">
+          <tbody>
+            <tr>
+              <td colspan="2" class="ring">Tatami  5</td>  <!-- Spans across both columns -->
+            </tr>
+            <tr>
+              <td class="event" >Men 18+ Blackbelt - Forms</td>
+              <td class="time">9:00am</td>
+            </tr>
+			<tr>
+              <td class="event">9-10 Advanced</td>
+              <td class="time">10:00am</td>
+            </tr>
+			  <tr>
+              <td class="event">10-11 Boys Blackbelt</td>
+              <td class="time">10:00am</td>
+            </tr>
+			<tr>
+              <td class="event">12-13 Boys Blackbelt</td>
+              <td class="time">12:00pm</td>
+            </tr>
+			<tr>
+              <td class="event">14-15 Boys Blackbelt</td>
+              <td class="time">1:30pm</td>
+            </tr>
+			<tr>
+              <td class="event" >Men 18+ Blackbelt - Sparring</td>
+              <td class="time">2:00pm</td>
+            </tr>
+			
+			<tr>
+              <td colspan="2" class="ring">Tatami  4</td>  <!-- Spans across both columns -->
+            </tr>
+            <tr>
+              <td class="event" >Veteran Men 35+ Blackbelt</td>
+              <td class="time">9:00am</td>
+            </tr>
+			            <tr>
+              <td class="event" >Veteran Men 42+ Blackbelt</td>
+              <td class="time">9:00am</td>
+            </tr>
+			<tr>
+              <td class="event">7-8 Advance</td>
+              <td class="time">10:00am</td>
+            </tr>
+			  <tr>
+              <td class="event">11-12 Intermediate</td>
+              <td class="time">11:00am</td>
+            </tr>
+			<tr>
+              <td class="event">15-17 Advanced</td>
+              <td class="time">1:00pm</td>
+            </tr>
+			<tr>
+              <td class="event">Musical Forms/Weapons - Coloured Belt</td>
+              <td class="time">2:00pm</td>
+            </tr>
+            <tr>
+              <td class="event" >Veteran Men 35+ Blackbelt - Forms</td>
+              <td class="time">2:00pm</td>
+            </tr>
+			            <tr>
+              <td class="event" >Veteran Men 42+ Blackbelt - Forms</td>
+              <td class="time">2:00pm</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+	  	  <td>
+        <table class="sub-table">
+          <tbody>
+            <tr>
+              <td colspan="2" class="ring">Tatami  7</td>  <!-- Spans across both columns -->
+            </tr>
+            <tr>
+              <td class="event" >-17 Traditional Forms Challenge - Coloured</td>
+              <td class="time">9:00am</td>
+            </tr>
+			<tr>
+              <td class="event">6 & Under Novice & Advance</td>
+              <td class="time">9:30am</td>
+            </tr>
+			  <tr>
+              <td class="event">9-10 Intermediate</td>
+              <td class="time">10:00am</td>
+            </tr>
+			<tr>
+              <td class="event">13-14 Intermediate</td>
+              <td class="time">12:00am</td>
+            </tr>
+			<tr>
+              <td class="event">Women 35+ Novice</td>
+              <td class="time">2:00pm</td>
+            </tr>
+			<tr>
+              <td class="event">Women 35+ Advance</td>
+              <td class="time">2:00pm</td>
+            </tr>
+			
+			<tr>
+              <td colspan="2" class="ring">Tatami  6</td>  <!-- Spans across both columns -->
+            </tr>
+            <tr>
+              <td class="event" >Little Ninja (Basics)</td>
+              <td class="time">9:00am</td>
+            </tr>
+			<tr>
+              <td class="event">Para Division (All ages/levels)</td>
+              <td class="time">9:30am</td>
+            </tr>
+			  <tr>
+              <td class="event">9-10 Novice</td>
+              <td class="time">10:00am</td>
+            </tr>
+			<tr>
+              <td class="event">11-12 Advance</td>
+              <td class="time">11:00am</td>
+            </tr>
+			<tr>
+              <td class="event">13-14 Novice</td>
+              <td class="time">12:00pm</td>
+            </tr>
+			<tr>
+              <td class="event">Mens 18+ Novice</td>
+              <td class="time">1:30pm</td>
+            </tr>
+			<tr>
+              <td class="event">Mens 18+ Intermediate</td>
+              <td class="time">1:30pm</td>
+            </tr>
+						<tr>
+              <td class="event">Mens 18+ Advance</td>
+              <td class="time">1:30pm</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+<td  class="invisible-td">
+        <table class="sub-table-borderless">
+          <tbody >
+            <tr>
+              <td colspan="2" class="ring">Tatami  8</td>  <!-- Spans across both columns -->
+            </tr>
+            <tr>
+              <td class="event" >-9 Girls Blackbelt</td>
+              <td class="time">9:00am</td>
+            </tr>
+			<tr>
+              <td class="event">-9 Boys Blackbelt</td>
+              <td class="time">9:00am</td>
+            </tr>
+			  <tr>
+              <td class="event">10-11 Girls Blackbelt</td>
+              <td class="time">10:30am</td>
+            </tr>
+			<tr>
+              <td class="event">12-13 Girls Blackbelt</td>
+              <td class="time">12:00pm</td>
+            </tr>
+			<tr>
+              <td class="event">14-15 Girls Blackbelt</td>
+              <td class="time">1:30pm</td>
+            </tr>
+			<tr>
+              <td class="event">Mens 35+ Novice</td>
+              <td class="time">2:00pm</td>
+            </tr>
+						<tr>
+              <td class="event">Mens 35+ Advance</td>
+              <td class="time">2:00pm</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+  </tbody>
+</table>
+<div id="news-ticker" class="news-ticker-container"></div>
+
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+    <!-- Popup -->
+    <div id="overlay"></div>
+    <div id="popup">
+		<table class="popup-table">
+			<tr>
+				<td class="popup-table"><img src="./img/STK-Medals-1.png" alt="wkc-logo" class="winner-medal-popup" /></td>
+				<td class="popup-table">
+		  <h1 class="h1-popup">Congratulations!</h1>
+		  <br></br>
+		  
+		  <h2 class="h2-popup-name" id="popup-name"></h2>
+		  <!--<h3 class="h3-popup" >won</h3> -->
+		  <h2 class="h2-popup-place" id="popup-place"></h2>
+		  <!--<h3 class="h3-popup" >in</h3> -->
+		  <h2 class="h2-popup-age-division" id="popup-division-age"></h2>
+		  </td>
+		  <td class="popup-table"><img src="./img/STK-Medals-1.png" alt="wkc-logo" class="winner-medal-popup" /></td>
+		  </tr>
+	  </table>
+    </div>
+  </div>
+<script>
+console.log(
+    "%c┌───────────────────────────────────────────────────────────────────────────┤\n" +
+    "│ Created by:%c%c            Jaron Lorentz%c                                      \n" +
+    "│ Contact:%c               519-949-1718%c                                     \n" +
+    "│ Email:%c                 jjlortez.jl@gmail.com%c                           \n" +
+    "│ Organization:%c          Stonetown Karate Centre%c                          \n" +
+    "│ Event:%c                 STK Master of the Ring Tournament%c                \n" +
+    "│ Event Contact:%c         519-284-0614%c                                     \n" +
+    "├────────────────────────────────────────────────────────────────────────────┤\n" +
+    "│ Application:%c           HTML-Based Billboard System%c                      \n" +
+    "│ Description:%c           Displays division statuses and locations%c         \n" +
+    "│%c                        Allows real-time push alerts for winners%c         \n" +
+    "│%c                        Enhances event visibility and coordination%c       \n" +
+	"│ GitHub:%c                https:\\\\github.com\\STK_Billboard%c                  \n" +
+    "└────────────────────────────────────────────────────────────────────────────┤",
+    
+    "color: white; font-size: 16px; font-weight: bold;",  // Outline color
+    
+    "color: white; font-size: 16px; font-weight: bold;", "color: yellow; font-size: 16px;",
+    "color: white; font-size: 16px; font-weight: bold;", "color: cyan; font-size: 16px;",
+    "color: white; font-size: 16px; font-weight: bold;", "color: lime; font-size: 16px;",
+    "color: white; font-size: 16px; font-weight: bold;", "color: orange; font-size: 16px;",
+    "color: white; font-size: 16px; font-weight: bold;", "color: red; font-size: 16px;",
+    "color: white; font-size: 16px; font-weight: bold;", "color: yellow; font-size: 16px;",
+    "color: white; font-size: 16px; font-weight: bold;", "color: cyan; font-size: 16px;",
+    "color: white; font-size: 16px; font-weight: bold;", "color: lime; font-size: 16px;",
+	"color: white; font-size: 16px; font-weight: bold;", "color: lime; font-size: 16px;",
+	"color: white; font-size: 16px; font-weight: bold;", "color: lime; font-size: 16px;",
+	"color: white; font-size: 16px; font-weight: bold;", "color: orange; font-size: 16px;",
+    "color: white; font-size: 16px; font-weight: bold;"
+);
+</script>
+
+
+
+
+
+  <script src="script-time.js"></script>
+  <script src="script-ticker.js"></script>
+  <script src="script-display.js"></script>
+  <script src="confetti.js"></script>
+  <script src="script-table.js"></script>
+  
+</body>
+</html>

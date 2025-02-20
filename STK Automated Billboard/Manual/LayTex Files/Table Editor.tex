@@ -1,0 +1,60 @@
+\documentclass[a4paper,12pt]{article}
+
+% Packages for styling
+\usepackage{graphicx}  % For images (if needed)
+\usepackage{array}     % For better table formatting
+\usepackage{xcolor}    % For text highlighting
+\usepackage{longtable} % For longer tables
+
+% Title & Author
+\title{User Manual: Editable Table Guide}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{How to Use the Editable Table with Formatting and Class Changes}
+
+This section explains how to interact with the editable table, modify its contents, and understand the formatting rules.
+
+\subsection{Basic Actions}
+\begin{itemize}
+    \item \textbf{Click a cell} to edit its text.
+    \item \textbf{Press Enter or click outside} to save changes.
+    \item \textbf{If the text starts with "@",} the cell class changes to \texttt{event-over} (gray background).
+    \item \textbf{If "moved ring \#\#" appears,} it is highlighted in \textcolor{red}{red and bold}.
+    \item \textbf{If a cell with "event-over" does not contain "@",} it resets back to \texttt{event} (blue background).
+\end{itemize}
+
+\subsection{Example Use Cases}
+\begin{longtable}{|p{4cm}|p{4cm}|p{6cm}|}
+\hline
+\textbf{Input Text} & \textbf{Class Change} & \textbf{Formatted Output} \\ \hline
+\texttt{@Meeting 10AM} & \texttt{event} $\rightarrow$ \texttt{event-over} & \texttt{Meeting 10AM} (Gray background) \\ \hline
+\texttt{Sparring - moved ring 2} & No class change & \texttt{Sparring -} \textbf{\textcolor{red}{moved ring 2}} \\ \hline
+\texttt{moved ring 5} & No class change & \textbf{\textcolor{red}{moved ring 5}} \\ \hline
+\texttt{Regular Event} (was \texttt{event-over}) & \texttt{event-over} $\rightarrow$ \texttt{event} & \texttt{Regular Event} (Blue background) \\ \hline
+\end{longtable}
+
+\subsection{Step-by-Step Guide}
+\begin{enumerate}
+    \item \textbf{Click on any table cell} to enable editing.
+    \item \textbf{Type or edit the text.}
+    \item \textbf{Press Enter or click outside} to save changes.
+    \item \textbf{If the text starts with "@",} the "@" is removed, and the cell background turns gray (\texttt{event-over}).
+    \item \textbf{If "moved ring \#\#" appears,} it will be displayed in \textcolor{red}{bold red} within the text.
+    \item \textbf{If the "@" is removed,} the cell resets back to the default event format (blue background).
+\end{enumerate}
+
+\subsection{Notes}
+\begin{itemize}
+    \item Clicking a cell enables text editing.
+    \item Pressing Enter or clicking outside saves changes.
+    \item \textbf{Blue cells} (\texttt{event}) are standard event entries.
+    \item \textbf{Gray cells} (\texttt{event-over}) indicate events that started with "@".
+    \item \textbf{Red text} highlights any mention of \texttt{"moved ring \#\#"}.
+\end{itemize}
+
+\end{document}

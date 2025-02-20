@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-panel"> <!-- Larger background panel -->
+  <br><br><br><br>
+  <h1>Control Panel</h1>
+  <table class="invisible-table">
+    <tr>
+      <td>
+        <div class="control-container"> 
+		<h2 class="color-white">Edit</h2>
+          <div id="editor-container">
+            <label for="select-record">Select Record to Edit:</label>
+            <div class="dropdown-wrapper-wide">
+              <select id="select-record" class="dropdown-wrapper-wide"></select>
+            </div>
+            <br><br>
+			<button onclick="populateRecordList()">Refresh</button>
+            <button onclick="loadRecordForEditing()">Load Record</button>
+            <div id="edit-form" style="display: none;">
+              <button onclick="saveChanges()">Save Changes</button>
+              <button onclick="removeRecord()">Remove Record</button>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="control-container">
+          <h2 class="color-white">Add Records</h2>
+          <form id="control-form">
+            <label for="winner-type">Type:</label>
+            <div class="dropdown-wrapper-wide">
+              <select id="winner-type" name="winner-type" onchange="toggleWinnerType()" required class="dropdown-wrapper-wide">
+                <option value="normal">Normal</option>
+                <option value="grand">Grand</option>
+				<option value="challenge">Challenge</option>
+              </select>
+            </div>
+            <br><br>
+            <div id="grand-winner-section" style="display: none;">
+              <label for="grand-name">Name:</label>
+              <input type="text" id="grand-name" placeholder="Enter grand winner's name"><br><br>
+            </div>
+            <div id="normal-winners-section">
+              <label for="name1">1st Place:</label>
+              <input type="text" id="name1" placeholder="Enter name for 1st place"><br><br>
+              <label for="name2">2nd Place:</label>
+              <input type="text" id="name2" placeholder="Enter name for 2nd place"><br><br>
+              <label for="name3">3rd Place:</label>
+              <input type="text" id="name3" placeholder="Enter name for 3rd place"><br><br>
+            </div>
+            <label for="division">Division:</label>
+            <div class="dropdown-wrapper-wide">
+              <select id="division-type" name="division-type" onchange="updateDropdowns()" class="dropdown-wrapper-wide">
+                <option value="Junior Black Belt">Junior Black Belt</option>
+                <option value="Grand Champion">Grand Champion</option>
+                <option value="Challenge">Challenge</option>
+                <option value="Adult Black Belt">Adult Black Belt</option>
+                <option value="Veteran Black Belt">Veteran Black Belt</option>
+                <option value="Coloured Belt">Coloured Belt</option>
+              </select>
+            </div>
+            <div class="dropdown-wrapper">
+              <select id="age" name="age" class="dropdown-wrapper" required>
+                <option value="default">default</option>
+              </select>
+              <select id="division" name="division" class="dropdown-wrapper" required >
+                <option value="default">default</option>
+              </select>
+            </div>
+            <button type="submit">Send Popup</button>
+            <button type="button" onclick="clearData()">Clear Data</button>
+          </form>
+        </div>
+      </td>
+      <td>
+        <div class="control-container"> 
+          <h2 class="color-white">Settings</h2>
+		  <h3 class="setting-subheading">Export data to CSV file</h3>
+          <button onclick="exportLocalStorageToCSV()">Export Data</button>
+          <br><br>
+		  <h3 class="setting-subheading">Import data form CSV file</h3>
+				<input type="file" id="import-file" accept=".csv" class="upload">
+				<button onclick="importCSVToLocalStorage()">Import Data</button>
+          
+        </div>
+      </td>
+    </tr>
+  </table>
+  </div>
+  <script src="script-control.js"></script>
+  <script src="script-editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Bug
+1. Duplicate data check does not work
+2. Challenge popup broken with name
+3. 
+
+TODO
+1. Add correct data to table
+2. Verify submission data 

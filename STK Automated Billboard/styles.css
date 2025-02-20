@@ -1,0 +1,801 @@
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c; /* Dark background */
+  color: #f0f0f0; /* Light text */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Prevents the canvas from blocking other interactions */
+  z-index: 1; /* Confetti below popup and overlay */
+}
+
+
+
+h1 {
+  color: #ffcc00; /* Gold color */
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-align: center; /* Center the header */
+}
+
+h2 {
+  color: gray; 
+  font-size: 28px;
+}
+
+h3 {
+  color: gray; /* Red color */
+  font-size: 22px;
+}
+
+
+
+/* Header Styles */
+header {
+  background-color: #333; /* Dark header */
+  color: #ffcc00; /* Gold text */
+  padding: 15px;
+  text-align: center;
+  z-index: 4;
+}
+
+header h1 {
+  font-size: 48px; /* Larger text size for the header */
+  margin: 0;
+  color: #ffcc00; /* Gold color */
+  text-align: center; /* Center the header */
+}
+
+header img.logo {
+  max-width: 150px; /* Limit the logo size */
+  margin-top: 10px;
+  display: block; /* Ensures it behaves as a block-level element */
+  margin-left: auto;
+  margin-right: auto; /* Centers the logo */
+}
+
+
+
+
+
+
+
+/* Link Styles */
+a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  table, form {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+
+/* Center the table */
+table {
+  font-size: 0.955em;
+  margin: 0 auto; /* Centers the table horizontally */
+  width: 90%; /* Set the table width */
+  text-align: left; /* Align the text to the left */
+  border: 0px solid #444; /* Border around the table */
+  border-collapse: collapse; /* Collapsing the border between cells */
+  background: none;
+  background-color: none;
+}
+.division-table {
+  font-size: 0.955em;
+  margin: 0 auto; /* Centers the table horizontally */
+  width: 98%; /* Set the table width */
+  text-align: left; /* Align the text to the left */
+  border: 0px solid #444; /* Border around the table */
+  border-collapse: collapse; /* Collapsing the border between cells */
+  background: none;
+  background-color: none;
+  table-layout: fixed; /* Ensures consistent column sizing */
+}
+
+/* Styling table headers */
+th {
+  text-align: left; /* Align header text to the left */
+  padding-right: 5px; /* Add some padding for the headers */
+}
+
+/* Styling table cells */
+td {
+  padding: 0px; /* Adds padding around table data */
+  text-align: left; /* Align text to the left */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Style the ring cell to span two columns */
+td.ring {
+  font-weight: bold; /* Make the ring number bold */
+  background-color: #333; /* Dark background for ring number cell */
+  color: #fff; /* White text for better contrast */
+  text-align: center; /* Center the ring number */
+  padding: 15px; /* Add space around the ring number */
+}
+
+/* Style the time column */
+td.time {
+  padding: 10px;
+  text-align: right; /* Right align time */
+  font-weight: bold; /* Make time bold */
+  height: 24px;
+}
+/* Style the time column */
+td.event {
+  padding: 10px;
+  text-align: left;
+  height: 24px;
+}
+
+
+td.event-over {
+  padding: 10px;
+  text-align: left;
+  height: 24px;
+  text-decoration: line-through;
+}
+
+/* Optional: Styling for alternating row background for better visibility */
+tr:nth-child(odd) {
+  background-color: #666; /* Darker background for odd rows */
+}
+
+tr:nth-child(even) {
+  background-color: #555; /* Slightly lighter background for even rows */
+}
+
+
+table.sub-table {
+	width: 100%;
+	border: 1px solid #444; /* Border around the entire table */
+	
+}
+table.sub-table-borderless {
+	width: 100%;
+	border: 0px solid #444; /* Border around the entire table */
+	background-color: none;
+	
+}
+
+
+
+/* Basic styling for the container */
+.control-container {
+  background-color: #333;
+  width: 500px;
+  height: 400px;
+  margin: auto; /* Center the container horizontally */
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  text-align: center;
+  border-radius: 15px; /* Rounds the corners of the container */
+}
+
+
+
+/* Style for the form inputs */
+input {
+  padding: 10px;
+  width: 480px; /* Make the inputs take the full width available */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style for the buttons */
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+/* Send Popup Button Styling */
+button[type="submit"] {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Clear Data Button Styling */
+button[type="button"] {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+}
+
+button[type="button"]:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+/* Style for the labels */
+label {
+  font-size: 16px; /* Set the font size */
+  color: #fff; /* White text color for better contrast */
+  margin-bottom: 8px; /* Space below the label */
+  font-weight: bold; /* Make label text bold */
+  text-align: left; /* Align text to the left */
+  display: block; /* Make the label a block-level element for vertical alignment */
+}
+
+
+
+/* Overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 0px;
+  display: none;
+  z-index: 2; /* Overlay above confetti */
+}
+
+
+
+/* Optional: Style the form container */
+.control-container {
+  background-color: #333;
+  width: 500px;
+  height: 600px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 15px;
+  position: relative;
+}
+
+/* Style only the dropdowns ("Place", "Age", and "Division") */
+#place, #age, #division {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Focus effect for the dropdowns */
+#place:focus, #age:focus, #division:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Style for the "Age" and "Division" dropdowns (placed side by side) */
+#age, #division {
+  width: 48%; /* Makes each dropdown take up half the space */
+  display: inline-block;
+  margin-right: 4%;
+}
+
+/* Remove margin-right from the last dropdown */
+#division {
+  margin-right: 0;
+}
+
+/* Wrapper to make Age and Division dropdowns appear side by side */
+.dropdown-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Adjusts space between the two dropdowns */
+  width: 100%;
+  font-size: 1.1em;
+  height: 2.45em;
+  
+}
+.dropdown-wrapper-wide {
+  height: 2.45em;
+  display: flex;
+  width: 100%;
+  border-radius: 0.35em;
+  flex: 0 0 100%; /* This makes the division-type dropdown take up a full row */
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Make sure the dropdowns have the same width */
+#age, #division {
+  width: 48%; /* Adjust to fit within the wrapper */
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Ensure the dropdowns look good on smaller screens */
+@media (max-width: 600px) {
+  .dropdown-wrapper {
+    flex-direction: column; /* Stack dropdowns on mobile */
+  }
+
+  #age, #division {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 10px; /* Adds spacing between stacked dropdowns */
+  }
+}
+
+.alert {
+	font-weight: bold;
+	color: Red;
+}
+
+.invisible {
+    visibility: hidden; /* Makes the content invisible but keeps the space occupied */
+    border: none; /* Removes the border if present */
+    background: none; /* Ensures no background color */
+	  font-weight: bold; /* Make the ring number bold */
+	  color: #fff; /* White text for better contrast */
+	  text-align: center; /* Center the ring number */
+	  padding: 15px; /* Add space around the ring number */
+}
+
+table.sub-table-upper {
+    position: relative; /* Make the cell a positioned container */
+    vertical-align: top; /* Default vertical alignment for other content */
+}
+
+.borderless {
+	border: none;
+}
+
+.invisible-td {
+    border: none; /* Removes the border if present */
+    background: none; /* Ensures no background color */
+	background-color: #1c1c1c; /* Dark background */
+}
+
+
+.card-image {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.card-image img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+
+.news-ticker-container {
+  position: relative;
+  width: 100%;
+  min-height: 120px;
+  background-color: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top:25px;
+}
+
+
+
+/* 3 side-by-side normal cards */
+.cards-group.normal-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Single card for the age+division info. */
+
+
+/* Grand winner card style */
+
+
+/* Shared classes for card text vs image */
+.card-image {
+  margin-right: 10px;
+}
+.card-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+.card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-text-info {
+  display: flex;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Title lines inside normal/grand cards */
+.winner-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.winner-place {
+  font-size: 1.5rem;
+  color: #ffcc00;
+}
+.winner-division {
+  font-size: 1.5rem;
+  margin-top: 5px;
+  text-align: center;
+    display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Align text within the div */
+}
+
+.news-card.info-card .card-text {
+  text-align: center;
+}
+
+
+
+
+
+ /////////////////
+ 
+ /* Container for logos + title side by side */
+.title-container {
+  display: flex;
+  align-items: center;  /* vertically center images and text */
+  gap: 15px;           /* space between items */
+  justify-content: flex-start; /* logos to the left, H1 after them */
+  margin-bottom: 20px; /* space below the title section */
+}
+
+
+ 
+
+
+/* Time on the right */
+.time-right {
+  position: absolute;
+  right: 20px;
+  top:25px;
+  margin-right: 20px;        /* 20px from the right edge of .title-bar */
+  font-size: 5.25rem;
+  color: #fff;        /* or your preferred color */
+}
+
+.winner-medal-popup {
+	width: 350px;
+	margin: 15px;
+}
+
+.popup-table {
+	text-align: center;
+  border: 0px solid #444; /* Border around the table */
+  border-collapse: collapse; /* Collapsing the border between cells */
+  background: none;
+  background-color: none;
+}
+
+/* Popup */
+#popup {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px;
+  border-radius: 10px;
+  border: 0px;
+  text-align: center;
+  display: none;
+  z-index: 3; /* Popup above overlay */
+}
+#popup-name, #popup-place, #popup-division {
+  font-weight: bold;
+}
+
+/* Popup Close Button */
+#popup-close {
+  background-color: #ff0000; /* Red button */
+  color: white;
+  padding: 10px;
+border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+#popup-close:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+
+.h1-popup {
+	font-size: 4em; /* Set the font size */
+	padding: 0px;
+}
+
+.h2-popup-age-division {
+	font-size: 2.5em;
+	color: white;
+}
+.h2-popup-place {
+	font-size: 2.5em;
+	color: #ffcc00;
+}
+.h2-popup-name {
+	font-size: 3.5em;
+	color: white;
+}
+.h3-popup {
+	font-size: 2em
+	color: gray;
+}
+
+
+
+.h1-title {
+	font-size: 4.5em; /* Set the font size */
+	padding: 0px;
+	margin-top: -40px;
+	text-align: center;
+}
+.h2-title {
+	font-size: 2.5em; /* Set the font size */
+	padding: 0px;
+	text-align: center;
+}
+
+.invisible-table, .invisible-table th, .invisible-table td {
+  border: none; /* Removes the borders from the table, headers, and cells */
+  padding: 0; /* Optional: removes padding in cells */
+  background-color: #1c1c1c; /* Makes the background transparent */
+}
+.invisible-table th, .invisible-table td {
+  width: 33%;
+}
+
+.invisible-table td, .invisible-table th {
+  background-color: #1c1c1c; /* Makes the background transparent */
+  color: inherit; /* Inherits the text color, making it match the surrounding content */
+}
+
+
+.grand-winner-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+.grand-winner-place {
+  font-size: 1.5rem;
+  color: #ffcc00;
+    text-align: center;
+}
+.grand-winner-division {
+  font-size: 1.5rem;
+  margin-top: 5px;
+  text-align: center;
+}
+.grand-card-image-left {
+  flex-shrink: 0;
+  margin-right: 50px;
+  margin-left: 10px;
+}
+.grand-card-image-right {
+  flex-shrink: 0;
+  margin-right: 10px;
+  margin-left: 50px;
+}
+.grand-card-image-left img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+.grand-card-image-right img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.news-card .card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Align text within the div */
+}
+
+.news-card.grand-card {
+  display: flex; 
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Align text within the div */
+  align-items: center;
+  background: #333;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 0 auto;
+  text-align: center;
+  border: 4px solid #ffcc00;
+}
+
+.news-card.info-card {
+	  display: flex; 
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Align text within the div */
+  align-items: center;
+  background: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Normal card style (1st, 2nd, 3rd winners) */
+.news-card.normal-card-1st {
+  display: flex;
+  background: #444;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  align-items: center;
+  border: 4px solid #ffcc00;
+  min-width: 350px;
+}
+.news-card.normal-card-2nd {
+  display: flex;
+  background: #444;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  align-items: center;
+  border: 4px solid #c0c0c0;
+  min-width: 350px;
+}
+.news-card.normal-card-3rd {
+  display: flex;
+  background: #444;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  align-items: center;
+  border: 4px solid #cd7f32;
+  min-width: 350px;
+}
+
+/* Container for normal submissions */
+.normal-submission {
+  display: flex;
+  flex-direction: column; /* stack the row of winners + the age/div card below */
+  align-items: center;
+  gap: 10px;
+  background: #333;
+  padding: 10px;
+  border: 4px solid #c0c0c0;
+  border-radius: 8px;
+}
+
+/* Used in formatting. */
+/* This will cause the table column width  to match the contents */
+
+.invisible-table {
+  table-layout: auto !important; /* Ensures columns adjust based on content */
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fit-column {
+  width: 1% !important;  /* Forces the column to be as small as possible */
+  white-space: nowrap;   /* Prevents content from wrapping */
+}
+ /* Container for logos + title + time */
+.title-bar {
+  position: relative;    /* so we can absolutely position the time */
+  display: flex;
+  justify-content: center; /* center the middle group horizontally */
+  align-items: center;
+  margin: 20px 0;          /* some vertical spacing (optional) */
+}
+
+/* The group that holds the logos and h1 side by side */
+.centered-logos-and-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;         /* space between each item */
+}
+
+/* Logo styling */
+.title-logo {
+  height: 8em;      /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+
+/* Title styling */
+.centered-logos-and-title h1 {
+  margin: 0;
+  font-size: 5em;   /* adjust as needed */
+  color: #ffcc00;    /* example color */
+}
+
+.popup-table {
+	border: 4px solid #666; /* Change #ccc to your preferred color */
+}
+/* Styles for the larger background panel */
+.background-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1); /* Light overlay effect */
+  z-index: -1; /* Send behind other elements */
+  padding: 10px;
+  margin: 10px;
+}
+
+.upload {
+	width: 80%;
+}
+
+.color-white {
+	color: white;
+}
+
+.setting-subheading {
+		text-align: left;
+} 	
