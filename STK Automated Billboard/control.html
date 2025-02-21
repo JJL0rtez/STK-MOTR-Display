@@ -21,11 +21,11 @@
               <select id="select-record" class="dropdown-wrapper-wide"></select>
             </div>
             <br><br>
-			<button onclick="populateRecordList()">Refresh</button>
-            <button onclick="loadRecordForEditing()">Load Record</button>
+			<button class="blue-button" onclick="populateRecordList()">Refresh</button>
+            <button class="blue-button" onclick="loadRecordForEditing()">Load Record</button>
             <div id="edit-form" style="display: none;">
-              <button onclick="saveChanges()">Save Changes</button>
-              <button onclick="removeRecord()">Remove Record</button>
+              <button class="green-button" onclick="saveChanges()">Save Changes</button>
+              <button class="red-button" onclick="removeRecord()">Remove Record</button>
             </div>
           </div>
         </div>
@@ -74,8 +74,9 @@
                 <option value="default">default</option>
               </select>
             </div>
-            <button type="submit">Send Popup</button>
-            <button type="button" onclick="clearData()">Clear Data</button>
+            <button class="green-button">Send Popup</button>
+            <button class="red-button" onclick="clearForm()">Clear Form</button>
+
           </form>
         </div>
       </td>
@@ -83,12 +84,14 @@
         <div class="control-container"> 
           <h2 class="color-white">Settings</h2>
 		  <h3 class="setting-subheading">Export data to CSV file</h3>
-          <button onclick="exportLocalStorageToCSV()">Export Data</button>
+          <button class="blue-button" onclick="exportLocalStorageToCSV()">Export Data</button>
           <br><br>
 		  <h3 class="setting-subheading">Import data form CSV file</h3>
 				<input type="file" id="import-file" accept=".csv" class="upload">
-				<button onclick="importCSVToLocalStorage()">Import Data</button>
-          
+				<button class="blue-button" onclick="importCSVToLocalStorage()">Import Data</button>
+				<br><br>
+		  <h3 class="setting-subheading">Clear all data (Can't be undone)</h3>
+          <button class="red-button" onclick="clearData()">Clear Data</button>
         </div>
       </td>
     </tr>

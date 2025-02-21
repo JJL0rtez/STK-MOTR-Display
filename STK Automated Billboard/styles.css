@@ -798,4 +798,20 @@ border-radius: 5px;
 
 .setting-subheading {
 		text-align: left;
-} 	
+}
+
+.blue-button {
+	background-color: #0e86d4;
+	color: white;
+	font-weight: bold;
+}
+.red-button {
+	background-color: #E32227;
+	color: white;
+	font-weight: bold;
+}
+.green-button {
+	background-color: #18a558;
+	color: white;
+	font-weight: bold;`
+}

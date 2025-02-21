@@ -10,7 +10,7 @@ function populateRecordList() {
     
     // Concatenate age, division, record #, and winner type to make it easier to identify
     const winnerTypeText = submission.winnerType === 'grand' ? 'Grand Winner' : submission.winnerType === 'challenge' ? 'Challenge' : 'Normal Winner';
-    const displayText = `Record ${index + 1}: ${winnerTypeText} - Age: ${submission.age}, Division: ${submission.division}`;
+    const displayText = `Record ${index + 1}: ${winnerTypeText} -> ${submission.age}`;
     option.value = index;
     option.textContent = displayText;
     selectRecord.appendChild(option);
@@ -18,9 +18,6 @@ function populateRecordList() {
 }
 
 
-// Load the selected record into the edit form
-// Load the selected record into the edit form
-// Load the selected record into the edit form
 // Load the selected record into the edit form
 function loadRecordForEditing() {
   const storedSubmissions = JSON.parse(localStorage.getItem('submissions')) || [];
@@ -33,52 +30,29 @@ function loadRecordForEditing() {
 
   const record = storedSubmissions[selectedIndex];
 
-  // If it's a "grand" winner, populate grandName
+  // Set the correct winner type
+  document.getElementById('winner-type').value = record.winnerType; 
+
+  // Ensure all fields are properly set
+  document.getElementById('division-type').value = record.divisionType || '';
+  document.getElementById('division').value = record.division || '';
+  document.getElementById('age').value = record.age || '';
+
   if (record.winnerType === 'grand' || record.winnerType === 'challenge') {
-	  // Toggle winner to grand mode
-	  const winnerType = document.getElementById('winner-type').value;
       document.getElementById('grand-winner-section').style.display = 'block';
       document.getElementById('normal-winners-section').style.display = 'none';
-	  document.getElementById('winner-type').value = "grand";
-	  
-    if (record.grandName) {  // Ensure winners array exists and has at least one element
-      document.getElementById('grand-name').value = record.grandName; // 1st place (for grand winner)
-    }
-	    if (record.divisionType) {  // Ensure winners array exists and has at least one element
-      document.getElementById('division-type').value = record.divisionType; // 1st place (for grand winner)
-	  updateDropdowns()
-	  
-    }
-	    if (record.age) {  // Ensure winners array exists and has at least one element
-      document.getElementById('age').value = record.age; // 1st place (for grand winner)
-    }
-		    if (record.grandName) {  // Ensure winners array exists and has at least one element
-      document.getElementById('grand-name').value = record.grandName; // 1st place (for grand winner)
-    }
-	
-    // Clear the other name fields as they are not used for grand winner
-    //document.getElementById('name2').value = '';
-    //document.getElementById('name3').value = '';
-  }
-  // If it's a "normal" winner, populate all three names (1st, 2nd, 3rd)
-  else {
-	        const winnerType = document.getElementById('winner-type').value;
-        document.getElementById('grand-winner-section').style.display = 'none';
-        document.getElementById('normal-winners-section').style.display = 'block';
-    if (record.winners && record.winners[0]) {
-      document.getElementById('name1').value = record.winners[0].name; // 1st place
-    }
-    if (record.winners && record.winners[1]) {
-      document.getElementById('name2').value = record.winners[1].name; // 2nd place
-    }
-    if (record.winners && record.winners[2]) {
-      document.getElementById('name3').value = record.winners[2].name; // 3rd place
-    }
+
+      document.getElementById('grand-name').value = record.grandName || ''; 
+
+  } else {
+      document.getElementById('grand-winner-section').style.display = 'none';
+      document.getElementById('normal-winners-section').style.display = 'block';
+
+      document.getElementById('name1').value = record.winners?.[0]?.name || '';
+      document.getElementById('name2').value = record.winners?.[1]?.name || '';
+      document.getElementById('name3').value = record.winners?.[2]?.name || '';
   }
 
-  document.getElementById('division-type').value = record.divisionType;
-  document.getElementById('age').value = record.age;
-  document.getElementById('division').value = record.division;
   document.getElementById('edit-form').style.display = 'block'; // Show the form
 }
 
@@ -93,29 +67,33 @@ function saveChanges() {
     return;
   }
 
-  const winnerType = document.getElementById('name2').value ? 'normal' : 'grand'; // Determine if it's normal or grand based on whether name2 is populated
+  const winnerType = document.getElementById('winner-type').value;
+
   let updatedRecord;
 
-  if (winnerType === 'grand') {
+  if (winnerType === 'grand' || winnerType === 'challenge') {
     updatedRecord = {
-      winnerType: 'grand',
-      name: document.getElementById('grand-name').value, // Only 1 name for grand winner
-      age: document.getElementById('age').value,
-      division: document.getElementById('division').value,
-	  division: document.getElementById('division-type').value,
+      winnerType: winnerType,
+      grandName: document.getElementById('grand-name').value?.trim() || '',
+      age: document.getElementById('age')?.value?.split('/')[0]?.trim() || '', // ✅ Ensure age is correct
+      division: document.getElementById('division')?.value?.trim() || '',      // ✅ Fix division issue
+      divisionType: document.getElementById('division-type')?.value?.trim() || '',
     };
   } else {
     updatedRecord = {
       winnerType: 'normal',
       winners: [
-        { place: '1st', name: document.getElementById('name1').value },
-        { place: '2nd', name: document.getElementById('name2').value },
-        { place: '3rd', name: document.getElementById('name3').value },
+        { place: '1st', name: document.getElementById('name1').value?.trim() || '' },
+        { place: '2nd', name: document.getElementById('name2').value?.trim() || '' },
+        { place: '3rd', name: document.getElementById('name3').value?.trim() || '' },
       ],
-      age: document.getElementById('age').value,
-      division: document.getElementById('division').value,
+      age: document.getElementById('age')?.value?.trim() || '',      // ✅ Ensure age is correctly stored
+      division: document.getElementById('division')?.value?.trim() || '', // ✅ Ensure division is correctly stored
+      divisionType: document.getElementById('division-type')?.value?.trim() || '',
     };
   }
+
+  console.log("Saving corrected record:", updatedRecord); // ✅ Debugging log
 
   storedSubmissions[selectedIndex] = updatedRecord;
   localStorage.setItem('submissions', JSON.stringify(storedSubmissions));
@@ -124,6 +102,7 @@ function saveChanges() {
   populateRecordList(); // Re-populate the list
   document.getElementById('edit-form').style.display = 'none'; // Hide the form
 }
+
 
 // Remove the selected record
 function removeRecord() {
@@ -147,3 +126,11 @@ function removeRecord() {
 
 // Call this function to populate the record list when the page loads
 populateRecordList();
+
+function clearForm() {
+    // Get all input fields inside the "Add Records" form
+    const inputs = document.querySelectorAll("#control-form input[type='text']");
+    
+    // Clear each input field
+    inputs.forEach(input => input.value = "");
+}

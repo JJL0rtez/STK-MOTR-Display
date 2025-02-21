@@ -76,6 +76,7 @@ document.getElementById('control-form').addEventListener('submit', function (e) 
 });
 
     function toggleWinnerType() {
+		clearForm();
       const winnerType = document.getElementById('winner-type').value;
 		if (winnerType === 'grand') {
 		document.getElementById('grand-winner-section').style.display = 'block';
@@ -258,6 +259,13 @@ document.getElementById('control-form').addEventListener('submit', function (e) 
 		link.click();
 		document.body.removeChild(link);
 	}
+function clearForm() {
+    // Get all input fields inside the "Add Records" form
+    const inputs = document.querySelectorAll("#control-form input[type='text']");
+    
+    // Clear each input field
+    inputs.forEach(input => input.value = "");
+}
 
 function importCSVToLocalStorage() {
     const fileInput = document.getElementById("import-file");

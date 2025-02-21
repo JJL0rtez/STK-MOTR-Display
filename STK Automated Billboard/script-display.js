@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
         popupName = 'No 1st place winner';
         popupPlace = '';
       }
-    } else if (data.winnerType === 'grand' || data.winnerType === 'Challange') {
+    } else if (data.winnerType === 'grand' || data.winnerType === 'challenge') {
       // console.log("[DEBUG] winnerType = grand");
       popupName = data.grandName || 'No grand winner name';
       popupPlace = '1st';
     } else {
-      console.log("[DEBUG] winnerType = unknown");
+      console.log("[DEBUG] winnerType = " + data.winnerType);
       popupName = 'Unknown Winner Type';
       popupPlace = '';
     }
