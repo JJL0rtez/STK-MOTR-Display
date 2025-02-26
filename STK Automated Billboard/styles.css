@@ -620,18 +620,18 @@ border-radius: 5px;
 
 
 .grand-winner-name {
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   font-weight: bold;
   text-align: center;
 }
 .grand-winner-place {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #ffcc00;
     text-align: center;
 }
 .grand-winner-division {
-  font-size: 1.5rem;
-  margin-top: 5px;
+  font-size: 1.8rem;
+  margin-top: 2px;
   text-align: center;
 }
 .grand-card-image-left {
@@ -836,4 +836,7 @@ border-radius: 5px;
 	background-color: #18a558;
 	color: white;
 	font-weight: bold;`
+}
+.cell-filler {
+		color: #222;
 }

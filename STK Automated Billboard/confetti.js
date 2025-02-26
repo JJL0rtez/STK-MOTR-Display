@@ -9,7 +9,7 @@ function initConfettiCanvas() {
 }
 
 let confettiPieces = []; // Global array to hold confetti pieces
-const defaultColors = ['#FFD700', '#C0C0C0']; // Default to Gold and Silver
+const defaultColors = ['#FFD700', '#ffffff']; // Default to Gold and Silver
 
 let confettiInterval;
 let confettiDuration = 15000; // Duration in milliseconds
