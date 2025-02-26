@@ -11,15 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // const timeString = `${hours}:${minutes}`;
 
     // If you prefer 12-hour AM/PM format, uncomment below instead:
-    let suffix = 'AM';
+    //let suffix = 'AM';
+	let suffix = '';
     let displayHour = hours;
     if (hours === 0) {
       displayHour = 12; // Midnight is 12 AM
     } else if (hours === 12) {
-      suffix = 'PM'; // Noon is 12 PM
+      suffix = ''; // Noon is 12 PM
+	  //suffix = 'PM'; // Noon is 12 PM
     } else if (hours > 12) {
       displayHour = hours - 12;
-      suffix = 'PM';
+      suffix = '';
+	  //suffix = 'PM';
     }
     const timeString = `${displayHour}:${minutes} ${suffix}`;
     

@@ -96,22 +96,22 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .join("");
 
-      // Put them in a group (row)
-      const threeUpHTML = `<div class="cards-group normal-group">${winnerCards}</div>`;
-
       // 4th card for age+division
       const ageDivCard = `
-	  <div class="news-card info-card">
-          <div class="card-text-info">${ageDivisionString}</div>
-        </div>
+	     <div class="news-card normal-card-none">
+              <div class="card-text">
+                <div class="winner-name">${ageDivisionString}</div>
+              </div>
+            </div>
       `;
 
       // Combine them
       tickerContainer.innerHTML = `
-        <div class="normal-submission">
-		        
-          ${threeUpHTML}
-          ${ageDivCard}
+        <div class="normal-submission">     
+          <div class="cards-group normal-group">
+			  ${ageDivCard}
+			  ${winnerCards}
+		  </div>
         </div>
       `;
 
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(() => {
     currentSubmissionIndex = (currentSubmissionIndex + 1) % submissions.length;
     displaySubmission(submissions[currentSubmissionIndex]);
-  }, 2000);
+  }, 15000);
 
   // 7. Optional: Listen for storage changes to update dynamically
   window.addEventListener("storage", (event) => {

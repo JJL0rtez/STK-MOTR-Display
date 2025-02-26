@@ -113,7 +113,7 @@ table {
   background-color: none;
 }
 .division-table {
-  font-size: 0.955em;
+  font-size: 1.355em;
   margin: 0 auto; /* Centers the table horizontally */
   width: 98%; /* Set the table width */
   text-align: left; /* Align the text to the left */
@@ -140,24 +140,30 @@ td {
 /* Style the ring cell to span two columns */
 td.ring {
   font-weight: bold; /* Make the ring number bold */
-  background-color: #333; /* Dark background for ring number cell */
+  background-color: #222; /* Dark background for ring number cell */
   color: #fff; /* White text for better contrast */
   text-align: center; /* Center the ring number */
-  padding: 15px; /* Add space around the ring number */
+  padding: 5px; /* Add space around the ring number */
+  font-size:2.94em;
 }
 
 /* Style the time column */
-td.time {
-  padding: 10px;
+td.time {km,jnh , m,.mol
+  padding: 5px;
   text-align: right; /* Right align time */
   font-weight: bold; /* Make time bold */
   height: 24px;
+  font-size:1.00em;
+  font-family: 'Arial Black', sans-serif; /* Default bold font */
+
 }
 /* Style the time column */
 td.event {
-  padding: 10px;
+  padding: 5px;
   text-align: left;
   height: 24px;
+  font-size:1.10em;
+  font-family: 'Arial Black', sans-serif; /* Default bold font */
 }
 
 
@@ -170,11 +176,11 @@ td.event-over {
 
 /* Optional: Styling for alternating row background for better visibility */
 tr:nth-child(odd) {
-  background-color: #666; /* Darker background for odd rows */
+  background-color: #333; /* Darker background for odd rows */
 }
 
 tr:nth-child(even) {
-  background-color: #555; /* Slightly lighter background for even rows */
+  background-color: #222; /* Slightly lighter background for even rows */
 }
 
 
@@ -715,6 +721,15 @@ border-radius: 5px;
   border: 4px solid #cd7f32;
   min-width: 350px;
 }
+.news-card.normal-card-none {
+  display: flex;
+  background: #444;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  align-items: center;
+  min-width: 350px;
+}
 
 /* Container for normal submissions */
 .normal-submission {
@@ -726,6 +741,7 @@ border-radius: 5px;
   padding: 10px;
   border: 4px solid #c0c0c0;
   border-radius: 8px;
+  min-width: 1400px;
 }
 
 /* Used in formatting. */
@@ -760,6 +776,12 @@ border-radius: 5px;
 /* Logo styling */
 .title-logo {
   height: 8em;      /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+.title-logo-left {
+  height: 6em;      /* adjust as needed */
   width: auto;
   object-fit: contain;
   display: inline-block;
