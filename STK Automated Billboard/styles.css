@@ -1,7 +1,8 @@
 /* General Body Styles */
 body {
   font-family: 'Arial Black', sans-serif; /* Default bold font */
-  background-color: #1c1c1c; /* Dark background */
+  /*background-color: #1c1c1c;  Dark background */
+  background-color: black; /* Dark background */
   color: #f0f0f0; /* Light text */
   margin: 0;
   padding: 0;
@@ -398,7 +399,8 @@ table.sub-table-upper {
 .invisible-td {
     border: none; /* Removes the border if present */
     background: none; /* Ensures no background color */
-	background-color: #1c1c1c; /* Dark background */
+	/* background-color: #1c1c1c;  Dark background */
+	
 }
 
 
@@ -607,17 +609,11 @@ border-radius: 5px;
 .invisible-table, .invisible-table th, .invisible-table td {
   border: none; /* Removes the borders from the table, headers, and cells */
   padding: 0; /* Optional: removes padding in cells */
-  background-color: #1c1c1c; /* Makes the background transparent */
+  color: inherit; /* Inherits the text color, making it match the surrounding content */
 }
 .invisible-table th, .invisible-table td {
   width: 33%;
 }
-
-.invisible-table td, .invisible-table th {
-  background-color: #1c1c1c; /* Makes the background transparent */
-  color: inherit; /* Inherits the text color, making it match the surrounding content */
-}
-
 
 .grand-winner-name {
   font-size: 2.1rem;
@@ -839,4 +835,8 @@ border-radius: 5px;
 }
 .cell-filler {
 		color: #222;
+}
+
+.background-override-black {
+	background-color: black;
 }
