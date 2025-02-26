@@ -1,6 +1,6 @@
 /* General Body Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial Black', sans-serif; /* Default bold font */
   background-color: #1c1c1c; /* Dark background */
   color: #f0f0f0; /* Light text */
   margin: 0;
