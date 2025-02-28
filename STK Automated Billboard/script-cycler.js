@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const groups = document.querySelectorAll(".table-group");
     let currentGroupIndex = 0;
-    const switchInterval = 5000; // 5 seconds per transition
+    const switchInterval = 7000; // 5 seconds per transition
 
     function switchGroups() {
         // Hide current group

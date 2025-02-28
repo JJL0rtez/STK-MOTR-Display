@@ -187,7 +187,7 @@ tr:nth-child(even) {
 
 table.sub-table {
 	width: 100%;
-	border: 1px solid #444; /* Border around the entire table */
+	border: 8px solid #999; /* Border around the entire table */
 	
 }
 table.sub-table-borderless {
@@ -276,7 +276,7 @@ label {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   border: 0px;
   display: none;
   z-index: 2; /* Overlay above confetti */
@@ -613,6 +613,7 @@ border-radius: 5px;
 	font-size: 2.5em; /* Set the font size */
 	padding: 0px;
 	text-align: center;
+	color: white;
 }
 
 .invisible-table, .invisible-table th, .invisible-table td {
@@ -780,7 +781,7 @@ border-radius: 5px;
 
 /* Logo styling */
 .title-logo {
-  height: 8em;      /* adjust as needed */
+  height: 10em;      /* adjust as needed */
   width: auto;
   object-fit: contain;
   display: inline-block;
@@ -878,6 +879,7 @@ td.time-auto-1 {
   height: 24px;
   font-size:2.50em;
   font-family: 'Arial Black', sans-serif; /* Default bold font */
+  color: #FFD700;
 
 }
 /* Style the time column */
@@ -897,6 +899,7 @@ td.time-auto-2 {
   height: 24px;
   font-size:1.50em;
   font-family: 'Arial Black', sans-serif; /* Default bold font */
+  color: #FFD700;
 
 }
 /* Style the time column */
@@ -918,9 +921,8 @@ td.event-auto-3 {
   padding: 20px; /* Add space around the ring number */
   font-size:4.54em;
   height: 400px;
+  width: 400px;
 }
 .sub-table-layout {
-	height: 20%;
-	width: 20%;
-	color:red;
+	border: 8px solid #999; /* Border around the entire table */
 }
