@@ -842,10 +842,85 @@ border-radius: 5px;
 	color: white;
 	font-weight: bold;`
 }
-.cell-filler {
-		color: #222;
+.cell-filler-even {
+	color: #222;
+}
+.cell-filler-odd {
+	color: #333;
 }
 
 .background-override-black {
 	background-color: black;
+}
+
+/* Group container */
+.table-group {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 96%;
+}
+
+/* Active group */
+.table-group.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Style the time column */
+td.time-auto-1 {
+  padding: 15px;
+  text-align: right; /* Right align time */
+  font-weight: bold; /* Make time bold */
+  height: 24px;
+  font-size:2.50em;
+  font-family: 'Arial Black', sans-serif; /* Default bold font */
+
+}
+/* Style the time column */
+td.event-auto-1 {
+  padding: 15px;
+  text-align: left;
+  height: 24px;
+  font-size:2.50em;
+  font-family: 'Arial Black', sans-serif; /* Default bold font */
+}
+
+/* Style the time column */
+td.time-auto-2 {
+  padding: 5px;
+  text-align: right; /* Right align time */
+  font-weight: bold; /* Make time bold */
+  height: 24px;
+  font-size:1.50em;
+  font-family: 'Arial Black', sans-serif; /* Default bold font */
+
+}
+/* Style the time column */
+td.event-auto-2 {
+  padding: 5px;
+  text-align: left;
+  height: 24px;
+  font-size:1.50em;
+  font-family: 'Arial Black', sans-serif; /* Default bold font */
+}
+ 
+/* Style the time column */
+td.event-auto-3 {
+  font-weight: bold; /* Make the ring number bold */
+  background-color: #222; /* Dark background for ring number cell */
+  color: #fff; /* White text for better contrast */
+  text-align: center; /* Center the ring number */
+  border: 4px solid #666;
+  padding: 20px; /* Add space around the ring number */
+  font-size:4.54em;
+  height: 400px;
+}
+.sub-table-layout {
+	height: 20%;
+	width: 20%;
+	color:red;
 }
