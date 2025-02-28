@@ -41,7 +41,7 @@ function startConfetti() {
     isConfettiActive = true;
     
     confettiInterval = setInterval(() => {
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 30; i++) {
         confettiPieces.push(createFirework());
       }
     }, 100);
